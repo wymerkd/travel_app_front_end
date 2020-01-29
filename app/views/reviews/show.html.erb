@@ -3,3 +3,5 @@
   <h3>Rating: <%= @review.rating%></h3>
   <h2><%= @review.author%>: </h2>
   <h3>"<%= @review.content%>"</h3>
+
+  <p><%= link_to "Edit post", edit_review_path(@review) %></p>

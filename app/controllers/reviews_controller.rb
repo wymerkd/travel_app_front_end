@@ -9,20 +9,22 @@ class ReviewsController < ApplicationController
   def show
     id_number = request.params["id"].to_i
     @review = Review.find(id_number)
-
-
     # @review = Review.find(:all, :params => :id )
     # json_response(@review)
   end
 
   def new
-
-
     @review = Review.new(:author => '', :content => '', :city_name => '', :country_name => '', :rating => '')
-
     # @review = Review.find(:all, :params => :id )
     # json_response(@review)
+  end
 
+  def edit
+    id_number = request.params["id"].to_i
+    @review = Review.find(id_number)
+    # @review = Review.find(:all, :params => :id )
+    # json_response(@review)
+    render :edit
   end
 
   def create
@@ -37,12 +39,15 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
-    if @review.update!(review_params)
-      render status: 200, json: {
-        message: "This review has been updated successfully."
-      }
-    end
+    id_number = request.params["id"].to_i
+    @review = Review.find(id_number)
+    # @review = Review.find(params[:id])
+    # binding.pry
+    @review.update_attributes(request.params["review"])
+      # render status: 200, json: {
+      #   message: "This review has been updated successfully."
+      # }
+      redirect_to "/"
   end
 
   def destroy
