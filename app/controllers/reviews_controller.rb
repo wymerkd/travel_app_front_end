@@ -9,15 +9,31 @@ class ReviewsController < ApplicationController
   def show
     id_number = request.params["id"].to_i
     @review = Review.find(id_number)
-    
+
 
     # @review = Review.find(:all, :params => :id )
     # json_response(@review)
   end
 
+  def new
+
+
+    @review = Review.new(:author => '', :content => '', :city_name => '', :country_name => '', :rating => '')
+
+    # @review = Review.find(:all, :params => :id )
+    # json_response(@review)
+
+  end
+
   def create
-    @review = Review.create!(review_params)
+
+    # binding.pry
+    # @review = Review.create!(:author => 'e', :content => 'a', :city_name => 'ee', :country_name => 'eee', :rating => 2)
+    @review = Review.create!(request.params["review"])
+
     # json_response(@review, :created)
+    # @review.save
+      redirect_to "/"
   end
 
   def update
