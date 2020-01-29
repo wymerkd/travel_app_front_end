@@ -51,8 +51,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    id_number = request.params["id"].to_i
+    @review = Review.find(id_number)
     @review.destroy
+    redirect_to "/"
   end
 
   private
