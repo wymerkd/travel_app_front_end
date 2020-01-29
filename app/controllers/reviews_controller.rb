@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   def show
     id_number = request.params["id"].to_i
     @review = Review.find(id_number)
-
+    
 
     # @review = Review.find(:all, :params => :id )
     # json_response(@review)
