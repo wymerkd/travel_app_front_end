@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
+    # binding.pry
     json_response(@reviews)
   end
 

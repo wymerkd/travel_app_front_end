@@ -1,0 +1,7 @@
+<h1>Here is a list of countries</h1>
+
+<ul>
+  <% @reviews.each do |country| %>
+  <li><%= country.country_name %></li>
+  <% end %>
+</ul>
