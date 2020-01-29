@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+https://api.rubyonrails.org/v3.1/classes/ActiveResource/Base.html
