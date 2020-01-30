@@ -23,4 +23,8 @@ Things you may want to cover:
 
 * ...
 
+<!-- Active Resource  -->
 https://api.rubyonrails.org/v3.1/classes/ActiveResource/Base.html
+
+<!-- JWT Authentication -->
+https://www.pluralsight.com/guides/token-based-authentication-with-ruby-on-rails-5-api
